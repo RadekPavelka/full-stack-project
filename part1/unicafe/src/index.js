@@ -2,16 +2,14 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 const Button = ({handleClick, text}) => {
-  console.log(handleClick)
-  console.log(text)
   return (
   <button onClick={handleClick}>{text}</button>
   )
 }
 
-const Display = (props) => {
+const Display = ({text, count}) => {  
   return (
-    <div>{props.text} {props.count}</div>
+    <div>{text} {count}</div>
   )
 }
 
@@ -20,6 +18,11 @@ const App = () => {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
+
+  const getTotal = () => (good + neutral + bad)
+  const getAverage = () => (good*1 + neutral*0 + bad*-1) / getTotal()
+  const getPositivePercentage = () =>  `${good / getTotal() * 100} %`
+  
 
   //const addGood = () => setGood(good + 1) 
   //const addNeutral = () => setNeutral(neutral + 1) 
@@ -35,6 +38,10 @@ const App = () => {
       <Display text="good" count={good} />
       <Display text="neutral" count={neutral} />
       <Display text="bad" count={bad} />
+      <Display text="all" count={getTotal()} />
+      <Display text="average" count={getAverage()} />
+      <Display text="positive" count={getPositivePercentage()} />
+
 
     </div>
 
