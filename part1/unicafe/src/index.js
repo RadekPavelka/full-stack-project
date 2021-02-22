@@ -7,9 +7,11 @@ const Button = ({handleClick, text}) => {
   )
 }
 
-const Display = ({text, count}) => {  
+const Statistic = ({text, value}) => {
   return (
-    <div>{text} {count}</div>
+    <div>
+      {text} {value}
+    </div>
   )
 }
 
@@ -31,12 +33,12 @@ const Statistics = ({good, neutral, bad}) => {
   return (
   <div>
     <h2>Statistics</h2>
-    <Display text="good" count={good} />
-    <Display text="neutral" count={neutral} />
-    <Display text="bad" count={bad} />
-    <Display text="all" count={getTotal()} />
-    <Display text="average" count={getAverage()} />
-    <Display text="positive" count={getPositivePercentage()} />
+    <Statistic text="good" value={good} />
+    <Statistic text="neutral" value={neutral} />
+    <Statistic text="bad" value={bad} />
+    <Statistic text="all" value={getTotal()} />
+    <Statistic text="average" value={getAverage()} />
+    <Statistic text="positive" value={getPositivePercentage()} />
   </div>
   )
 }
