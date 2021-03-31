@@ -1,0 +1,24 @@
+{
+  "persons": [
+    {
+      "name": "Paul McCartney",
+      "number": "9843243",
+      "id": 1
+    },
+    {
+      "name": "James Bond",
+      "number": "007",
+      "id": 2
+    },
+    {
+      "name": "Peter File",
+      "number": "23134",
+      "id": 3
+    },
+    {
+      "name": "John Doe",
+      "number": "9821035",
+      "id": 4
+    }
+  ]
+}
